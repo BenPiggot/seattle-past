@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('./models/Map');
+require('./models/Marker');
 
 const app = express();
 
