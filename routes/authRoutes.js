@@ -2,7 +2,7 @@ const passport = require('passport');
 
 module.exports = (app) => {
   app.get('/auth/facebook', passport.authenticate('facebook', {
-    scope: ['profile', 'email']
+    scope: ['public_profile', 'email', 'user_friends']
   }));
 
   app.get('/auth/facebook/callback', 
@@ -11,6 +11,15 @@ module.exports = (app) => {
       res.redirect('/')
     }
   );
+
+  app.get('/auth/twitter', passport.authenticate('twitter'));
+
+  app.get('/auth/twitter/callback', 
+    passport.authenticate('twitter'),
+    (req, res) => {
+      res.redirect('/')
+    }
+  )
 
   app.get('/api/logout', (req, res) => {
     req.logout();

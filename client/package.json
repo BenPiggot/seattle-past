@@ -9,6 +9,9 @@
     "/auth/facebook": {
       "target": "http://localhost:4000"
     },
+    "/auth/twitter": {
+      "target": "http://localhost:4000"
+    },
     "/api/*": {
       "target": "http://localhost:4000"
     }
