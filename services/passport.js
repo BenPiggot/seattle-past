@@ -20,13 +20,14 @@ passport.use(new FacebookStrategy({
   clientID: keys.facebookClientId,
   clientSecret: keys.facebookSecret,
   callbackURL: '/auth/facebook/callback',
+  proxy: true
 }, async (accessToken, refreshToken, profile, done) => {
-    const existingUser = await User.findOne({ googleId: profile.id })
+    const existingUser = await User.findOne({ facebookId: profile.id })
     if (existingUser) {
       done(null, existingUser);
     }
     else {
-      const user = await new User({ googleId: profile.id }).save()
+      const user = await new User({ facebookId: profile.id }).save()
       done(null, user);
     }
   })
