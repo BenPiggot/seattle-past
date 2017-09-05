@@ -18,10 +18,15 @@
   },
   "dependencies": {
     "leaflet": "^1.2.0",
+    "material-ui": "^0.19.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-leaflet": "^1.6.5",
-    "react-modal": "^2.2.4"
+    "react-modal": "^2.2.4",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",

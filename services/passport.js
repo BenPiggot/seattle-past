@@ -44,7 +44,6 @@ passport.use(new TwitterStrategy({
   consumerSecret: keys.twitterConsumerSecret,
   callbackURL: '/auth/twitter/callback'
 }, async (req, token, tokenSecret, profile, done) => {
-    console.log(profile)
     const existingUser = await User.findOne({ twitterId: profile.id })
     if (existingUser) {
       done(null, existingUser);
