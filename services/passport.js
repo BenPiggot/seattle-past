@@ -67,7 +67,6 @@ passport.use(new InstagramStrategy({
   clientSecret: keys.instagramClientSecret,
   callbackURL: '/auth/instagram/callback'
 }, async (accessToken, refreshToken, profile, done) => {
-    console.log(profile)
     const existingUser = await User.findOne({ instagramId: profile.id })
     if (existingUser) {
       done(null, existingUser);
@@ -76,7 +75,7 @@ passport.use(new InstagramStrategy({
       const user = await new User({ 
         instagramId: profile.id, 
         username: profile.username,
-        avatar: profile.profile_picture
+        avatar: ''
        }).save()
       done(null, user);
     }
