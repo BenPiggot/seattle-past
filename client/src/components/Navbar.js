@@ -8,7 +8,7 @@ import {grey800} from 'material-ui/styles/colors.js'
  */
 const Navbar = () => (
   <AppBar
-    style={{background: grey800, fontFamily: 'Raleway'}}
+    style={{backgroundColor: 'rgba(0,0,0,0.2)', color: '#999', fontFamily: 'Raleway'}}
     title="Title"
     iconClassNameRight="muidocs-icon-navigation-expand-more"
   />
