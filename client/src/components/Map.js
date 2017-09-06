@@ -4,17 +4,14 @@ import { Map, TileLayer, GeoJSON } from 'react-leaflet'
 class SeattleMap extends Component {
   constructor() {
     super()
-    this.state = {
-      lat: 47.6062,
-      lng: -122.3321,
-      zoom: 12,
-    }
   }
 
   render() {
-    const position = [this.state.lat, this.state.lng];
+    const lat = this.props.lat || 47.6062;
+    const long = this.props.long || -122.3321;
+    const position = [lat, long];
     return (
-      <Map style={{height: '700px', zIndex: 0}} center={position} zoom={this.state.zoom}>
+      <Map style={{height: '700px', zIndex: 0}} center={position} zoom={this.props.zoom}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'

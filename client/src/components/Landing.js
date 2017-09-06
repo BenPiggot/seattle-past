@@ -6,7 +6,7 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <SeattleMap />
+        <SeattleMap zoom={12}/>
         <div className="overlay" />
         <div className="sign-in">
           <h1 className="title">Ghosts of Seattle Past</h1>
