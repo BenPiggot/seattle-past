@@ -13,6 +13,9 @@
     "/auth/twitter": {
       "target": "http://localhost:4000"
     },
+    "/auth/instagram": {
+      "target": "http://localhost:4000"
+    },
     "/api/*": {
       "target": "http://localhost:4000"
     }

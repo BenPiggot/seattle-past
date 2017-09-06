@@ -2,6 +2,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const FacebookStrategy = require('passport-facebook');
 const TwitterStrategy = require('passport-twitter');
+const InstagramStrategy = require('passport-instagram');
 const keys = require('../config/keys');
 
 const User = mongoose.model('users');
@@ -60,3 +61,26 @@ passport.use(new TwitterStrategy({
     }
   })
 );
+
+passport.use(new InstagramStrategy({
+  clientID: keys.instagramClientId,
+  clientSecret: keys.instagramClientSecret,
+  callbackURL: '/auth/instagram/callback'
+}, async (accessToken, refreshToken, profile, done) => {
+    console.log(profile)
+    const existingUser = await User.findOne({ instagramId: profile.id })
+    if (existingUser) {
+      done(null, existingUser);
+    }
+    else {
+      const user = await new User({ 
+        instagramId: profile.id, 
+        username: profile.username,
+        avatar: profile.profile_picture
+       }).save()
+      done(null, user);
+    }
+  })
+);
+
+
