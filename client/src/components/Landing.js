@@ -9,7 +9,7 @@ class Landing extends Component {
         <SeattleMap />
         <div className="overlay" />
         <div className="sign-in">
-          <h1 className="title">Seattle Past</h1>
+          <h1 className="title">Ghosts of Seattle Past</h1>
           <h1><a href='/auth/facebook'>Sign in with Facebook</a></h1>
           <h1><a href='/auth/twitter'>Sign in with Twitter</a></h1>
         </div>
