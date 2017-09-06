@@ -12,6 +12,7 @@ class Landing extends Component {
           <h1 className="title">Ghosts of Seattle Past</h1>
           <h1><a href='/auth/facebook'>Sign in with Facebook</a></h1>
           <h1><a href='/auth/twitter'>Sign in with Twitter</a></h1>
+          <h1><a href='/auth/instagram'>Sign in with instagram</a></h1>
         </div>
       </div>
     )
