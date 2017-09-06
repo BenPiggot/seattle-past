@@ -14,7 +14,7 @@ class SeattleMap extends Component {
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
-      <Map style={{height: '700px'}} center={position} zoom={this.state.zoom}>
+      <Map style={{height: '700px', zIndex: 0}} center={position} zoom={this.state.zoom}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'

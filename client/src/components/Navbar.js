@@ -1,6 +1,6 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
-import {grey800} from 'material-ui/styles/colors.js'
+import {grey300} from 'material-ui/styles/colors.js'
 
 /**
  * A simple example of `AppBar` with an icon on the right.
@@ -8,8 +8,8 @@ import {grey800} from 'material-ui/styles/colors.js'
  */
 const Navbar = () => (
   <AppBar
-    style={{backgroundColor: 'rgba(0,0,0,0.2)', color: '#999', fontFamily: 'Raleway'}}
-    title="Title"
+    style={{backgroundColor: grey300, color: '#999', fontFamily: 'Raleway'}}
+    title="Seattle Past"
     iconClassNameRight="muidocs-icon-navigation-expand-more"
   />
 );
