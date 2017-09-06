@@ -12,7 +12,7 @@ class App extends Component {
         <div>
           <Navbar />
           <Route exact path="/" component={Landing} />
-          <Route exact path="/map" component={SeattleMap} />
+          <Route exact path="/map" render={(props) => <SeattleMap neighborhoods={true} />} />
         </div>
       </BrowserRouter>
     )
