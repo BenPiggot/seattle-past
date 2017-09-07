@@ -6,6 +6,8 @@ import Modal from 'react-modal';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/FlatButton';
 import { Tab } from 'material-ui/Tabs';
 import {grey300} from 'material-ui/styles/colors.js';
 import * as actions from '../actions';
@@ -14,6 +16,22 @@ import * as actions from '../actions';
  * A simple example of `AppBar` with an icon on the right.
  * By default, the left icon is a navigation-menu.
  */
+ const customStyles = {
+    content: {
+    position: 'absolute',
+    top: '100px',
+    left: '100px',
+    right: '100px',
+    bottom: '100px',
+    border: '1px solid #ccc',
+    background: '#fff',
+    overflow: 'auto',
+    WebkitOverflowScrolling: 'touch',
+    borderRadius: '4px',
+    outline: 'none',
+    padding: '20px'
+  }
+}
 
 class Navbar extends Component {
   constructor(props) {
@@ -102,17 +120,17 @@ class Navbar extends Component {
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           contentLabel="Example Modal"
+          style={customStyles}
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
-          <div>I am a modal</div>
+          <h1 style={{float: 'left'}}>Add a Place or Event</h1>
+          <div style={{float: 'right'}}>
+            <FlatButton onClick={this.closeModal} label="Close" />
+          </div>
           <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
+            <TextField hintText="Place/Event Name" fullWidth={true}/>
+            <TextField hintText="Place/Event Description" multiLine={true} fullWidth={true}/>
+            <TextField hintText="Link to Image/Video (Optional)" fullWidth={true} />
           </form>
         </Modal>
       </AppBar>
