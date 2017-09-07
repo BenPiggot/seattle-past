@@ -12,6 +12,8 @@ import { Tab } from 'material-ui/Tabs';
 import {grey300} from 'material-ui/styles/colors.js';
 import * as actions from '../actions';
 
+import LocationForm from './LocationForm';
+
 /**
  * A simple example of `AppBar` with an icon on the right.
  * By default, the left icon is a navigation-menu.
@@ -127,11 +129,7 @@ class Navbar extends Component {
           <div style={{float: 'right'}}>
             <FlatButton onClick={this.closeModal} label="Close" />
           </div>
-          <form>
-            <TextField hintText="Place/Event Name" fullWidth={true}/>
-            <TextField hintText="Place/Event Description" multiLine={true} fullWidth={true}/>
-            <TextField hintText="Link to Image/Video (Optional)" fullWidth={true} />
-          </form>
+          <LocationForm />
         </Modal>
       </AppBar>
     );
