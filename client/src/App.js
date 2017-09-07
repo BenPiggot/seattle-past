@@ -12,7 +12,7 @@ class App extends Component {
         <div>
           <Navbar />
           <Route exact path="/" component={Landing} />
-          <Route exact path="/map" render={(props) => <SeattleMap zoom={12} neighborhoods={true} />} />
+          <Route exact path="/map" render={(props) => <SeattleMap zoom={11} neighborhoods={true} />} />
           <Route exact path="/capitol-hill" render={(props) => <SeattleMap zoom={14} lat={47.6253} long={-122.3022} />} />
           <Route exact path="/rainier-valley" render={(props) => <SeattleMap zoom={14} lat={47.5361} long={-122.2752} />} />
           <Route exact path="/west-seattle" render={(props) => <SeattleMap zoom={14} lat={47.5667} long={-122.3868} />} />

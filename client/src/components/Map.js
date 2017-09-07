@@ -7,7 +7,7 @@ class SeattleMap extends Component {
   }
 
   render() {
-    const lat = this.props.lat || 47.6062;
+    const lat = this.props.lat || 47.5862;
     const long = this.props.long || -122.3321;
     const position = [lat, long];
     return (
