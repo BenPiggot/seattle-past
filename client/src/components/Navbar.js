@@ -88,7 +88,7 @@ class Navbar extends Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <MenuItem onClick={(e) => this.handleRoutes(e, '/')}>Home</MenuItem>
+          <MenuItem onClick={(e) => this.handleRoutes(e, '/map')}>Home</MenuItem>
           <MenuItem onClick={(e) => this.handleRoutes(e, '/capitol-hill')}>Capitol Hill and the Central Area</MenuItem>
           <MenuItem onClick={(e) => this.handleRoutes(e, '/rainier-valley')}>Rainier Valley</MenuItem>
           <MenuItem onClick={(e) => this.handleRoutes(e, '/west-seattle')}>West Seattle</MenuItem>
