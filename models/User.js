@@ -8,7 +8,7 @@ const userSchema = Schema({
   email: String,
   username: String,
   avatar: String,
-  markers: [ { type: Schema.Types.ObjectId, ref: 'Marker'} ]
+  locations: [ { type: Schema.Types.ObjectId, ref: 'Location'} ]
 });
 
 mongoose.model('users', userSchema);

@@ -9,7 +9,8 @@ const locationSchema = Schema({
   latitude: Number,
   longitude: Number,
   approved: { type: Boolean, default: false },
-  user: {  type: Schema.Types.ObjectId, ref: 'User' }
+  user: {  type: Schema.Types.ObjectId, ref: 'User' },
+  map: { type: Schema.Types.ObjectId, ref: 'Map' }
 })
 
 mongoose.model('locations', locationSchema);

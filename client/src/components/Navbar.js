@@ -94,6 +94,7 @@ class Navbar extends Component {
   async handleNewLocationSubmit(values) {
     const response = await axios.post('/api/locations', values);
     this.setState({ modalIsOpen: false })
+    this.props.fetchLocations()
   }
 
   render() {

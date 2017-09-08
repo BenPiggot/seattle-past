@@ -30,4 +30,10 @@ module.exports = (app) => {
 
     res.send(true);
   })
+
+  app.get('/api/locations', async (req, res) => {
+    const response = await Location.find();
+    console.log(response)
+    res.send(response)
+  })
 } 

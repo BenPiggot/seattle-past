@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, ADD_LOCATION } from './types';
+import { FETCH_USER, FETCH_LOCATIONS } from './types';
 
 export const fetchUser = () => {
   return async (dispatch) => {
@@ -11,11 +11,11 @@ export const fetchUser = () => {
   }
 }
 
-export const addLocation = (location) => {
+export const fetchLocations = (location) => {
   return async (dispatch) => {
-    const response = await axios.post('/api/locations', location)
+    const response = await axios.get('/api/locations')
     dispatch({
-      type: ADD_LOCATION,
+      type: FETCH_LOCATIONS,
       payload: response.data
     })
   }
