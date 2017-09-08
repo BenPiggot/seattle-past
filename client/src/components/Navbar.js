@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
+import axios from 'axios';
 
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import { Tab } from 'material-ui/Tabs';
 import {grey300} from 'material-ui/styles/colors.js';
@@ -92,7 +92,6 @@ class Navbar extends Component {
   }
 
   handleNewLocationSubmit(values) {
-    debugger
     console.log(values);
   }
 
