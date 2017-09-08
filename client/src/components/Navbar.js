@@ -91,8 +91,9 @@ class Navbar extends Component {
     document.location = '/api/logout';
   }
 
-  handleNewLocationSubmit(values) {
-    console.log(values);
+  async handleNewLocationSubmit(values) {
+    const response = await axios.post('/api/locations', values);
+    this.setState({ modalIsOpen: false })
   }
 
   render() {
