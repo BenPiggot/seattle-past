@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const markerSchema = Schema({
+const locationSchema = Schema({
   place: String,
   description: String,
   media: String,
@@ -11,4 +11,4 @@ const markerSchema = Schema({
   user: {  type: Schema.Types.ObjectId, ref: 'User' }
 })
 
-mongoose.model('markers', markerSchema);
+mongoose.model('locations', locationSchema);

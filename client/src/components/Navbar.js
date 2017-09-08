@@ -51,6 +51,7 @@ class Navbar extends Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleNewLocationSubmit = this.handleNewLocationSubmit.bind(this);
   }
 
   static contextTypes = {
@@ -90,6 +91,11 @@ class Navbar extends Component {
     document.location = '/api/logout';
   }
 
+  handleNewLocationSubmit(values) {
+    debugger
+    console.log(values);
+  }
+
   render() {
     return (
       <AppBar
@@ -124,12 +130,11 @@ class Navbar extends Component {
           contentLabel="Example Modal"
           style={customStyles}
         >
-
           <h1 style={{float: 'left'}}>Add a Place or Event</h1>
           <div style={{float: 'right'}}>
             <FlatButton onClick={this.closeModal} label="Close" />
           </div>
-          <LocationForm />
+          <LocationForm handleNewLocationSubmit={this.handleNewLocationSubmit}/>
         </Modal>
       </AppBar>
     );

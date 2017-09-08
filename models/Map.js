@@ -6,7 +6,7 @@ const mapSchema = Schema({
   description: String,
   latitude: Number,
   longitude: Number,
-  markers: [ { type: Schema.Types.ObjectId, ref: 'Marker'} ]
+  locations: [ { type: Schema.Types.ObjectId, ref: 'Location'} ]
 });
 
 mongoose.model('maps', mapSchema);

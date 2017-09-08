@@ -1,13 +1,15 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 const renderNameField = props => (
   <TextField 
     hintText={props.label}
     fullWidth={true}
-    {...props}
+    name={props.name}
+    {...props.input}
   />
 )
 
@@ -16,7 +18,7 @@ const renderDescriptionField = props => (
     hintText={props.label}
     multiLine={true}
     fullWidth={true}
-    {...props}
+    {...props.input}
   />
 )
 
@@ -24,17 +26,18 @@ const renderMediaField = props => (
   <TextField 
     hintText={props.label}
     fullWidth={true}
-    {...props}
+    {...props.input}
   />
 )
 
 const LocationForm = props => {
   return (
-    <form>
+    <form onSubmit={props.handleSubmit(values => props.handleNewLocationSubmit(values))}>
       <div>
-        <Field label="Place/Event Name" component={renderNameField}/>
-        <Field label="Place/Event Description" component={renderDescriptionField}/>
-        <Field label="Link to Image/Video (Optional)" component={renderMediaField}/>
+        <Field type="text" name="name" label="Place/Event Name" component={renderNameField}/>
+        <Field type="text" name="location" label="Place/Event Description" component={renderDescriptionField}/>
+        <Field type="text" name="media" label="Link to Image/Video (Optional)" component={renderMediaField}/>
+        <RaisedButton type="submit" label="Submit" primary={true} />
       </div>
     </form>
   )
