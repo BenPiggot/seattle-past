@@ -1,6 +1,6 @@
 import React, { Component }  from 'react'
 import axios from 'axios';
-import { Map, TileLayer, GeoJSON, Marker } from 'react-leaflet';
+import { Map, TileLayer, GeoJSON, Marker, Popup } from 'react-leaflet';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -36,7 +36,18 @@ class SeattleMap extends Component {
           }
          /> : null }
         { this.props.locations.length ? this.props.locations.map(l => {
-          return <Marker position={[l.latitude, l.longitude]} /> }) : null }
+          console.log(l)
+          return (
+            <Marker position={[l.latitude, l.longitude]}> 
+              <Popup>
+                <div>
+                  <h3>{l.place}</h3>
+                  <div>{l.description}</div>
+                </div>
+              </Popup>
+            </Marker>
+          )
+        }) : null }
       </Map>
     );
   }

@@ -12,7 +12,6 @@ module.exports = (app) => {
     const lookup = address || name;
 
     await geocoder.geocode(lookup, async (err, res) => {
-      console.log(res)
       latitude = res[0].latitude;
       longitude = res[0].longitude;
 
@@ -33,7 +32,6 @@ module.exports = (app) => {
 
   app.get('/api/locations', async (req, res) => {
     const response = await Location.find();
-    console.log(response)
     res.send(response)
   })
 } 
