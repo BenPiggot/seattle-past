@@ -27,7 +27,7 @@ passport.use(new FacebookStrategy({
 }, async (accessToken, refreshToken, profile, done) => {
   console.log(profile)
     const existingUser = await User.findOne({ facebookId: profile.id })
-    const avatar = profile.photos && profile.photos.value ? profile.photos.value[0] : '';
+    const avatar = profile.photos[0] && profile.photos[0].value ? profile.photos[0].value : '';
     if (existingUser) {
       done(null, existingUser);
     }
@@ -47,6 +47,7 @@ passport.use(new TwitterStrategy({
   consumerSecret: keys.twitterConsumerSecret,
   callbackURL: '/auth/twitter/callback'
 }, async (req, token, tokenSecret, profile, done) => {
+    console.log(profile)
     const existingUser = await User.findOne({ twitterId: profile.id })
     if (existingUser) {
       done(null, existingUser);
@@ -67,6 +68,7 @@ passport.use(new InstagramStrategy({
   clientSecret: keys.instagramClientSecret,
   callbackURL: '/auth/instagram/callback'
 }, async (accessToken, refreshToken, profile, done) => {
+    console.log(profile)
     const existingUser = await User.findOne({ instagramId: profile.id })
     if (existingUser) {
       done(null, existingUser);

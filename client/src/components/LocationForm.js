@@ -43,7 +43,7 @@ const LocationForm = props => {
     <form onSubmit={props.handleSubmit(values => props.handleNewLocationSubmit(values))}>
       <div>
         <Field type="text" name="name" label="Place/Event Name" component={renderNameField}/>
-        <Field type="text" name="address" label="Street Address (Optional)" component={renderNameField}/>
+        <Field type="text" name="address" label="Street Address (Optional)" component={renderAddressField}/>
         <Field type="text" name="location" label="Place/Event Description" component={renderDescriptionField}/>
         <Field type="text" name="media" label="Link to Image/Video (Optional)" component={renderMediaField}/>
         <RaisedButton type="submit" label="Submit" primary={true} />
